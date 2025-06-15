@@ -10,7 +10,7 @@ namespace UpdateTreesForCustomBuildings
         {
             //Harmony.DEBUG = true;
 
-            var harmony = new Harmony("Destroy Completely Dismantled and Empty Building");
+            var harmony = new Harmony("Update Idle Buildings when Tree is grown");
 
             harmony.PatchAll();
 
@@ -25,6 +25,9 @@ namespace UpdateTreesForCustomBuildings
                 int count = __instance.buildingsDict[(BuildingID)200].Count;
                 while (count-- > 0)
                 {
+			/*
+   			Make sure to edit the ID to match the Custom building ID you'd like to update
+   			*/
                     if (__instance.buildingsDict[(BuildingID)200][count].IsIdle())
                         __instance.buildingsDict[(BuildingID)200][count].ForceIdleCheck();
                 }
