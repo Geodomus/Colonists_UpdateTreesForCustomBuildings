@@ -7,8 +7,8 @@
         <ProjectGuid>{DE99C05D-EC16-439D-BD2C-D28B2851F4E7}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>DestroyDismantledEmptyBuilding</RootNamespace>
-        <AssemblyName>DestroyDismantledEmptyBuilding</AssemblyName>
+        <RootNamespace>UpdateTreesForCustomBuildings</RootNamespace>
+        <AssemblyName>UpdateTreesForCustomBuildings</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
