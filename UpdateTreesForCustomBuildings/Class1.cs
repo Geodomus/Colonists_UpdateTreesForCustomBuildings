@@ -31,15 +31,6 @@ namespace UpdateTreesForCustomBuildings
                 {
                     building.ForceIdleCheck();
                 }
-                /*int count = __instance.buildingsDict[(BuildingID)200].Count;
-                while (count-- > 0)
-                {
-			/*
-   			Make sure to edit the ID to match the Custom building ID you'd like to update
-   			*/
-                    if (__instance.buildingsDict[(BuildingID)200][count].IsIdle())
-                        __instance.buildingsDict[(BuildingID)200][count].ForceIdleCheck();
-                }*/
             }
         }
     }
