@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using HarmonyLib;
 using UnityEngine;
 namespace UpdateTreesForCustomBuildings
@@ -22,12 +24,19 @@ namespace UpdateTreesForCustomBuildings
 		
             static void Postfix(Player __instance)
             {
-                int count = __instance.buildingsDict[(BuildingID)200].Count;
+                var buildingsArray = new List<Building>();
+                buildingsArray.AddRange( __instance.buildings.FindAll(building => (building.productionData.GetInfo() is BuildingProductionLumberjackDataInfo) && !(building.typeId == BuildingID.Lumberjack_Hut)));
+                Debug.Log("buildings " + buildingsArray.Count);
+                foreach (var building in buildingsArray.Where(building => building.IsIdle()))
+                {
+                    building.ForceIdleCheck();
+                }
+                /*int count = __instance.buildingsDict[(BuildingID)200].Count;
                 while (count-- > 0)
                 {
                     if (__instance.buildingsDict[(BuildingID)200][count].IsIdle())
                         __instance.buildingsDict[(BuildingID)200][count].ForceIdleCheck();
-                }
+                }*/
             }
         }
     }
